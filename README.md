@@ -45,7 +45,7 @@ In your `nuxt.config.js`
 ```js
 {
   plugins: [
-    { src: 'vue-rellax/lib/nuxt-plugin', ssr: false }
+    { src: 'node_modules/vue-rellax/lib/nuxt-plugin', ssr: false }
   ]
 }
 ```
