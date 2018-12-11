@@ -11,6 +11,8 @@ let _Vue: typeof Vue // tslint:disable-line variable-name
 const instanceMap = new WeakMap<HTMLElement, RellaxInstance>()
 
 const inserted: DirectiveFunction = (el, { value }, vm) => {
+  if (value === false) { return }
+
   instanceMap.set(el, new Rellax(el, value))
 }
 
@@ -28,6 +30,7 @@ const unbind: DirectiveFunction = el => {
 
 const update: DirectiveFunction = (el, { value }, vm) => {
   destroy(el)
+  if (value === false) { return }
   instanceMap.set(el, new Rellax(el, value))
 }
 
