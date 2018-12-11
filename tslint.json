@@ -1,0 +1,19 @@
+{
+  "defaultSeverity": "warning",
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "lib/**",
+      "node_modules/**"
+    ]
+  },
+  "rules": {
+    "indent": [true, "spaces", 2],
+    "interface-name": false,
+    "object-literal-sort-keys": false,
+    "no-consecutive-blank-lines": false
+  }
+}
