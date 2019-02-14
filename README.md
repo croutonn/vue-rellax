@@ -16,6 +16,14 @@ or
 yarn add vue-rellax
 ```
 
+#### Browser Support
+
+Since this plugin uses WeakMap, old browsers need to load pollyfill.
+
+```html
+<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=WeakMap"></script>
+```
+
 ### Usage
 
 ```js
@@ -35,6 +43,36 @@ const vm = new Vue({
       I’m slow and smooth
     </div>
   `
+})
+```
+
+#### Destroy
+
+To `destroy`, assign `false` to `v-relax`.
+
+```js
+const vm = new Vue({
+  el: '#app',
+  template: `
+    <div>
+      <p v-rellax="rellax">
+        I’m slow and smooth
+      </p>
+      <button type="button" @click="destroyRellax">Destroy Rellax</button>
+    </div>
+  `,
+  data() {
+    return {
+      rellax: {
+        speed: -2
+      }
+    }
+  },
+  methods: {
+    destroyRellax() {
+      this.rellax = false
+    }
+  }
 })
 ```
 
