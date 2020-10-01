@@ -37,8 +37,11 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Test
+          name: Lint
           command: yarn test
+      - run:
+          name: Test
+          command: yarn test:unit
 
 workflows:
   build_and_test:
