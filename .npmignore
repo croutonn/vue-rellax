@@ -1,0 +1,6 @@
+.circleci/
+tests/
+.prettierrc.yml
+.prettierignore
+karma.conf.js
+renovate.json
