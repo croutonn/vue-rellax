@@ -1,5 +1,6 @@
 .circleci/
 tests/
+coverage/
 .prettierrc.yml
 .prettierignore
 karma.conf.js

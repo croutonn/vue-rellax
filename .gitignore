@@ -21,3 +21,6 @@ yarn-error.log*
 
 # Test
 /coverage
+
+# Dist
+/dist
