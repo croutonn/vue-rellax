@@ -1,11 +1,12 @@
 /*!
- * Vue Rellax v0.1.0
- * https://github.com/yutahaga/vue-rellax
+ * Vue Rellax v0.1.1
+ * https://github.com/croutonn/vue-rellax
  *
  * @license
- * Copyright (c) 2018 undefined
+ * Copyright (c) 2016 Moe Amaya (@moeamaya)
+ * Copyright (c) 2018 @croutonn
  * Released under the MIT license
- * https://github.com/yutahaga/vue-rellax/blob/master/LICENSE
+ * https://github.com/croutonn/vue-rellax/blob/master/LICENSE
  */
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -25,7 +26,7 @@ var rellax = createCommonjsModule(function (module) {
 // ------------------------------------------
 
 (function (root, factory) {
-  if (module.exports) {
+  if ( module.exports) {
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like environments that support module.exports,
     // like Node.
@@ -543,11 +544,11 @@ var install = function (InjectedVue) {
     _Vue.directive('rellax', {
         inserted: inserted,
         update: update,
-        unbind: unbind
+        unbind: unbind,
     });
 };
 var plugin = {
-    install: install
+    install: install,
 };
 
 export default plugin;

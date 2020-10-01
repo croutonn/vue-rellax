@@ -1,16 +1,17 @@
 /*!
- * Vue Rellax v0.1.0
- * https://github.com/yutahaga/vue-rellax
+ * Vue Rellax v0.1.1
+ * https://github.com/croutonn/vue-rellax
  *
  * @license
- * Copyright (c) 2018 undefined
+ * Copyright (c) 2016 Moe Amaya (@moeamaya)
+ * Copyright (c) 2018 @croutonn
  * Released under the MIT license
- * https://github.com/yutahaga/vue-rellax/blob/master/LICENSE
+ * https://github.com/croutonn/vue-rellax/blob/master/LICENSE
  */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
-	(global['Vue Rellax'] = factory());
+	(global = typeof globalThis !== 'undefined' ? globalThis : global || self, global['Vue Rellax'] = factory());
 }(this, (function () { 'use strict';
 
 	var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -31,7 +32,7 @@
 	// ------------------------------------------
 
 	(function (root, factory) {
-	  if (module.exports) {
+	  if ( module.exports) {
 	    // Node. Does not work with strict CommonJS, but
 	    // only CommonJS-like environments that support module.exports,
 	    // like Node.
@@ -542,18 +543,18 @@
 	    instanceMap.set(el, new rellax(el, value));
 	};
 	var install = function (InjectedVue) {
-	    if (_Vue) {
+	    if ( _Vue) {
 	        throw new Error('[vue-rellax] Vue Rellax is already installed');
 	    }
 	    _Vue = InjectedVue;
 	    _Vue.directive('rellax', {
 	        inserted: inserted,
 	        update: update,
-	        unbind: unbind
+	        unbind: unbind,
 	    });
 	};
 	var plugin = {
-	    install: install
+	    install: install,
 	};
 
 	return plugin;

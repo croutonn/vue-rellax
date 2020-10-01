@@ -4,7 +4,7 @@ const { rollup } = require('rollup')
 const replace = require('rollup-plugin-replace')
 const nodeResolve = require('rollup-plugin-node-resolve')
 const commonjs = require('rollup-plugin-commonjs')
-const { uglify } = require('rollup-plugin-uglify')
+const { terser } = require('rollup-plugin-terser')
 const meta = require('../package.json')
 
 const banner = `/*!
@@ -12,6 +12,7 @@ const banner = `/*!
  * ${meta.homepage}
  *
  * @license
+ * Copyright (c) 2016 Moe Amaya (@moeamaya)
  * Copyright (c) 2018 ${meta.author}
  * Released under the MIT license
  * ${meta.homepage}/blob/master/LICENSE
@@ -80,17 +81,7 @@ function build (c) {
 
   if (c.env === 'production') {
     config.plugins.push(
-      uglify({
-        output: {
-          comments: function(node, comment) {
-            if (comment.type === "comment2") {
-              // multiline comment
-              return /@preserve|@license|@cc_on/i.test(comment.value);
-            }
-            return false;
-          }
-        }
-      })
+      terser()
     )
   }
 
