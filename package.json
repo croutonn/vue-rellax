@@ -1,6 +1,6 @@
 {
   "name": "vue-rellax",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A plugin of Vue that adds a directive for parallax effect by rellax.js.",
   "license": "MIT",
   "author": "@croutonn",
