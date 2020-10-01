@@ -3,7 +3,7 @@ import Vue, {
   DirectiveFunction,
   PluginFunction,
   PluginObject,
-  VNode
+  VNode,
 } from 'vue'
 
 let _Vue: typeof Vue // tslint:disable-line variable-name
@@ -11,7 +11,9 @@ let _Vue: typeof Vue // tslint:disable-line variable-name
 const instanceMap = new WeakMap<HTMLElement, RellaxInstance>()
 
 const inserted: DirectiveFunction = (el, { value }, vm) => {
-  if (value === false) { return }
+  if (value === false) {
+    return
+  }
 
   instanceMap.set(el, new Rellax(el, value))
 }
@@ -24,13 +26,15 @@ const destroy = (el: HTMLElement) => {
   instance.destroy()
 }
 
-const unbind: DirectiveFunction = el => {
+const unbind: DirectiveFunction = (el) => {
   destroy(el)
 }
 
 const update: DirectiveFunction = (el, { value }, vm) => {
   destroy(el)
-  if (value === false) { return }
+  if (value === false) {
+    return
+  }
   instanceMap.set(el, new Rellax(el, value))
 }
 
@@ -44,12 +48,12 @@ const install: PluginFunction<void> = (InjectedVue: typeof Vue) => {
   _Vue.directive('rellax', {
     inserted,
     update,
-    unbind
+    unbind,
   })
 }
 
 const plugin: PluginObject<void> = {
-  install
+  install,
 }
 
 export default plugin

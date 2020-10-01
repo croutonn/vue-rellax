@@ -16,10 +16,10 @@ const FoundationComponent = {
   render(h: CreateElement) {
     return h('div', {
       style: {
-        height: '5000px'
-      }
+        height: '5000px',
+      },
     })
-  }
+  },
 }
 
 describe('Plugin Tests', () => {
@@ -28,7 +28,7 @@ describe('Plugin Tests', () => {
     localVue.use(Plugin)
 
     const exampleOptions: Rellax.RellaxOptions = {
-      speed: -2
+      speed: -2,
     }
 
     const ExampleComponent = {
@@ -36,30 +36,35 @@ describe('Plugin Tests', () => {
       render(h: CreateElement) {
         return h('div', {
           style: {
-            height: '100px'
+            height: '100px',
           },
           class: {
-            example: true
+            example: true,
           },
           directives: [
             {
               name: 'rellax',
-              value: exampleOptions
-            }
-          ]
+              value: exampleOptions,
+            },
+          ],
         })
-      }
+      },
+    }
+
+    const elem = document.createElement('div')
+    if (document.body) {
+      document.body.appendChild(elem)
     }
 
     const wrapper = mount(
       {
         render(h: CreateElement) {
           return h('div', [h(ExampleComponent), h(FoundationComponent)])
-        }
+        },
       },
       {
         localVue,
-        attachToDocument: true
+        attachTo: elem,
       }
     )
 
