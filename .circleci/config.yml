@@ -1,13 +1,16 @@
 version: 2.1
 
 executors:
-  nodelts:
+  nodewb:
     docker:
-      - image: cimg/node:12.18
+      - image: circleci/node:latest-browsers
+        environment:
+          IS_CI: true
+          CHROME_BIN: /usr/bin/google-chrome
 
 jobs:
   prepare_dependencies:
-    executor: nodelts
+    executor: nodewb
     steps:
       - checkout
       - run:
@@ -32,7 +35,7 @@ jobs:
             - .
 
   test:
-    executor: nodelts
+    executor: nodewb
     steps:
       - attach_workspace:
           at: .

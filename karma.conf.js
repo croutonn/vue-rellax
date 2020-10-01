@@ -1,4 +1,4 @@
-process.env.CHROME_BIN = require('puppeteer').executablePath()
+process.env.CHROME_BIN = process.env.IS_CI ? process.env.CHROME_BIN : require('puppeteer').executablePath()
 
 module.exports = function (config) {
   config.set({
