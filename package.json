@@ -41,7 +41,7 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.12",
+    "@types/chai": "^4.2.13",
     "@types/mocha": "^8.0.3",
     "@types/node": "^14.11.2",
     "@types/rellax": "^1.7.3",
