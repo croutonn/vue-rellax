@@ -15,7 +15,7 @@ const banner = `/*!
  * Copyright (c) 2016 Moe Amaya (@moeamaya)
  * Copyright (c) 2018 ${meta.author}
  * Released under the MIT license
- * ${meta.homepage}/blob/master/LICENSE
+ * ${meta.homepage}/blob/main/LICENSE
  */`
 
 const name = meta.name.split('/').pop();
