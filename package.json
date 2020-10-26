@@ -43,7 +43,7 @@
   "devDependencies": {
     "@types/chai": "^4.2.14",
     "@types/mocha": "^8.0.3",
-    "@types/node": "^14.14.3",
+    "@types/node": "^14.14.5",
     "@types/rellax": "^1.7.3",
     "@vue/test-utils": "^1.1.0",
     "chai": "^4.2.0",
