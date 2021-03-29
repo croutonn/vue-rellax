@@ -46,6 +46,19 @@ const vm = new Vue({
 })
 ```
 
+Configure rellax defaults in a component's data object:
+
+```js
+data() {
+  return {
+    rellax: {
+      speed: -2
+    }
+  }
+}
+```
+
+
 #### Destroy
 
 To `destroy`, assign `false` to `v-relax`.
