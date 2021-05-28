@@ -1,5 +1,5 @@
 {
   "extends": [
-    "@croutonn:maintenance"
+    "@typehut:maintenance"
   ]
 }
